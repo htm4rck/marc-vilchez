@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 class Clock{
-  private ahora;
-  private hour;
-  private min;
-  private sec;
-  private military;
+   ahora;
+   hour;
+   min;
+   sec;
+   military;
   constructor(){
     this.ahora = new Date();
     let hour = this.ahora.getHours();
@@ -31,7 +31,7 @@ class Clock{
 })
 export class MenuComponent implements OnInit {
   @Input() title: string;
-  private reloj:string;
+   reloj:string;
   constructor() {}
 
   ngOnInit() {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 class UtilDate {
-  private day: string;
-  private month: string;
+   day: string;
+   month: string;
   constructor() {
     const now = new Date();
     const months = [
@@ -20,10 +20,10 @@ class UtilDate {
   }
 }
 class UtilDay {
-  private id: number;
-  private day: string;
-  private decimal: number;
-  private minutes: string;
+   id: number;
+   day: string;
+   decimal: number;
+   minutes: string;
   constructor(id, day, decimal, minutes) {
     this.id = id;
     this.day = day;
@@ -47,8 +47,8 @@ export class CalcPayComponent implements OnInit {
   soles=0;
   solesSemanal=0;
   horas=8;
-  private day: string;
-  private mon: string;
+   day: string;
+   mon: string;
   constructor() {
     let i = 0;
     this.dias.forEach(dia => {

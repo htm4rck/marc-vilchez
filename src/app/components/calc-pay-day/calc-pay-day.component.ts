@@ -2,13 +2,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import * as moment from 'moment';
 
 class UtilHour {
-  private idecimal;
-  private fdecimal;
-  private tdecimal;
-  private total;
-  private ihour;
-  private fhour;
-  private minutes;
+   idecimal;
+   fdecimal;
+   tdecimal;
+   total;
+   ihour;
+   fhour;
+   minutes;
   constructor(hinicial, hfinal) {
     this.ihour = moment(hinicial.hour + ':' + hinicial.minute, 'HH:mm');
     this.fhour = moment(hfinal.hour + ':' + hfinal.minute, 'HH:mm');
