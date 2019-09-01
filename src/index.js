@@ -1,11 +1,12 @@
-const express = require('express');
-const socketio = require('socket.io');
 
-const http = require('http');
+const express = require('express');
 const path = require('path');
 
 const app = express();
-const server = http.createServer(app);
-const io = socketio.listen(server);
 
-app.set('port', process.env.PORT || 3000);
+app.use(express.static(__dirname+'/dist/marc-vilchez'));
+app.get('/',function(req,res){
+    res.sendFile(path.join(__dirname+'/dist/marc-vilchez/index.html'));
+});
+
+app.listen(process.env.PORT || 8080);
