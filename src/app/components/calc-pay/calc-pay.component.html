@@ -1,0 +1,158 @@
+<app-menu [title]="title"></app-menu>
+<section class="blog_area section_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <div class="blog_left_sidebar">
+          <article class="blog_item">
+            <div class="blog_item_img" id="idd">
+              <img class="card-img rounded-0" [src]="'assets/img/calcpay/single_blog_1.png'" alt="">
+              <a href="#" class="blog_item_date text-center">
+                <h3>{{day}}</h3>
+                <p>{{mon}}</p>
+              </a>
+            </div>
+
+            <div class="blog_details">
+              <a class="d-inline-block" href="single-blog.html">
+                <h2>Google inks pact for new 35-storey office</h2>
+              </a>
+              <p>That dominion stars lights dominion divide years for fourth have don't stars is that
+                he earth it first without heaven in place seed it second morning saying.</p>
+              <app-calc-pay-day *ngFor="let dia of dias; let i = index" (tdecimalOut)="outDecimal($event, i)"
+                (totalOut)="outHora($event, i)" [dia]="dia"></app-calc-pay-day>
+              <br>
+              <table class="table table-sm">
+                <thead>
+                  <th></th>
+                  <th style="width: 12%"></th>                  
+                  <th></th>
+                  <th style="width: 12%"></th>                  
+                  <th></th>
+                  <th style="width: 12%"></th>
+                  <th></th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="6" class="text-right"><strong>TOTAL DE HORAS</strong></td>
+                    <td class="text-right">{{hora}}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="6" class="text-right"><strong>TOTAL DECIMAL</strong></td>
+                    <td class="text-right">{{total}}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="5" class="text-right align-middle">
+                      <strong>x S/.</strong>
+                    </td>
+                    <td class="text-right">
+                      <input [(ngModel)]="soles" type="text" class="form-control">
+                    </td>
+                    <td class="text-right">{{(total*soles).toFixed(2)}}</td>
+                  </tr>
+                  <tr>
+                    <td class="text-right align-middle">
+                      <strong>Semanal S/.</strong>
+                    </td>
+                    <td class="text-right">
+                      <input [(ngModel)]="solesSemanal" type="text" class="form-control">
+                    </td>
+                    <td class="text-right align-middle">
+                      <strong>Diario S/.{{(solesSemanal/6).toFixed(2)}} / </strong>
+                    </td>
+                    <td class="text-right">
+                      <input [(ngModel)]="horas" type="text" class="form-control">
+                    </td>
+                    <td class="text-right align-middle">
+                      <strong>Horas =</strong>
+                    </td>
+                    <td class="text-right align-middle">S/.{{((solesSemanal/6)/horas).toFixed(2)}}</td>
+                    <td class="text-right align-middle">{{(((solesSemanal/6)/horas)*total).toFixed(2)}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <ul class="blog-info-link">
+                <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
+                <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <nav class="blog-pagination justify-content-center d-flex">
+            <ul class="pagination">
+              <li class="page-item">
+                <a href="#" class="page-link" aria-label="Previous">
+                  <i class="ti-angle-left"></i>
+                </a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">1</a>
+              </li>
+              <li class="page-item active">
+                <a href="#" class="page-link">2</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link" aria-label="Next">
+                  <i class="ti-angle-right"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="blog_right_sidebar">
+
+          <aside class="single_sidebar_widget instagram_feeds">
+            <h4 class="widget_title">Instagram Feeds</h4>
+            <ul class="instagram_row flex-wrap">
+              <li>
+                <a href="#">
+                  <img class="img-fluid"
+                    src="https://instagram.flim3-2.fna.fbcdn.net/vp/9649880bac34d31e2625a5f44783e8db/5DD24357/t51.2885-15/e35/c103.0.624.624/47692465_2274699516149034_3602014233198055872_n.jpg?_nc_ht=instagram.flim3-2.fna.fbcdn.net"
+                    alt="" width="100px">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img class="img-fluid"
+                    src="https://instagram.flim3-2.fna.fbcdn.net/vp/cfc4852a6c54f691c146a221cb9a0c26/5DCD25C6/t51.2885-15/e35/13257033_252140941810808_908902588_n.jpg?_nc_ht=instagram.flim3-2.fna.fbcdn.net"
+                    alt="">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img class="img-fluid"
+                    src="https://instagram.flim3-2.fna.fbcdn.net/vp/9649880bac34d31e2625a5f44783e8db/5DD24357/t51.2885-15/e35/c103.0.624.624/47692465_2274699516149034_3602014233198055872_n.jpg?_nc_ht=instagram.flim3-2.fna.fbcdn.net"
+                    alt="">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img class="img-fluid"
+                    src="https://instagram.flim3-2.fna.fbcdn.net/vp/0f82d9687c12330ceaaa82f9b41e69c0/5DC8AFC8/t51.2885-15/e35/47692465_2274699516149034_3602014233198055872_n.jpg?_nc_ht=instagram.flim3-2.fna.fbcdn.net"
+                    alt="">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img class="img-fluid"
+                    src="https://instagram.flim3-2.fna.fbcdn.net/vp/0f82d9687c12330ceaaa82f9b41e69c0/5DC8AFC8/t51.2885-15/e35/47692465_2274699516149034_3602014233198055872_n.jpg?_nc_ht=instagram.flim3-2.fna.fbcdn.net"
+                    alt="">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img class="img-fluid"
+                    src="https://instagram.flim3-2.fna.fbcdn.net/vp/0f82d9687c12330ceaaa82f9b41e69c0/5DC8AFC8/t51.2885-15/e35/47692465_2274699516149034_3602014233198055872_n.jpg?_nc_ht=instagram.flim3-2.fna.fbcdn.net"
+                    alt="">
+                </a>
+              </li>
+            </ul>
+          </aside>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

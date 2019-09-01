@@ -1,0 +1,47 @@
+<table class="table table-sm table-responsive">
+  <thead>
+    <th colspan="5">{{dia}}</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3"><small>MAÑANA</small></td>
+      <td class="text-nowrap text-right"><small>HORAS</small></td>
+      <td class="text-nowrap text-right"><small>DECIMAL</small></td>
+    </tr>
+    <tr>
+      <td style="width: 10%;">
+        <ngb-timepicker [(ngModel)]="mhi" [meridian]="true" (ngModelChange)="updateHour()"></ngb-timepicker>
+      </td>
+      <td class="align-middle" style="width: 0.5%">-</td>
+      <td style="width: 10%;">
+        <ngb-timepicker [(ngModel)]="mhf" [meridian]="true" (ngModelChange)="updateHour()"></ngb-timepicker>
+      </td>
+      <td class="align-middle text-right">{{totalMorn}}</td>
+      <td class="align-middle text-right">{{tdecimalMorn}}</td>
+    </tr>
+    <tr *ngIf="turno">
+      <td colspan="3" class="border-left"><small>TARDE</small></td>
+      <td class="text-nowrap text-right"><small>HORAS</small></td>
+      <td class="text-nowrap text-right"><small>DECIMAL</small></td>
+    </tr>
+    <tr *ngIf="turno">
+      <td class="" style="width: 10%;">
+        <ngb-timepicker [(ngModel)]="thi" [meridian]="true" (ngModelChange)="updateHour()"></ngb-timepicker>
+      </td>
+      <td class="align-middle" style="width: 0.5%;">-</td>
+      <td style="width: 10%;">
+        <ngb-timepicker [(ngModel)]="thf" [meridian]="true" (ngModelChange)="updateHour()"></ngb-timepicker>
+      </td>
+      <td class="align-middle text-right">{{totalAfter}}</td>
+      <td class="align-middle text-right">{{tdecimalAfter}}</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="text-right">
+        <button class="btn btn-sm btn-primary" (click)="addTurno()">{{turno?"-Turno":"+Turno"}}</button>
+      </td>
+      <td class="text-right"><small><strong>TOTAL</strong></small></td>
+      <td class="text-right"><strong>{{total.format('HH:mm')}}</strong></td>
+      <td class="text-right"><strong>{{tdecimal}}</strong></td>
+    </tr>
+  </tbody>
+</table>
